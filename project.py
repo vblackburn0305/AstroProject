@@ -92,7 +92,6 @@ fig, axs = plt.subplots(1, 3, figsize=(12, 4))
 types_data = [star_r_arr, galaxy_r_arr, qso_r_arr]
 types_colors = ['blue', 'orange', 'green']
 labels = ['Stars', 'Galaxies', 'Quasars']
-# Example errors, if you have real computed errors use those
 mu_errors = [0.029, 0.022, 0.010] 
 sigma_errors = [0.029, 0.022, 0.007]
 
@@ -144,7 +143,6 @@ print("Recall:", recall)
 sns.pairplot(df, hue='class')
 plt.show()
 
-# Filter out QSO and remove redshift, then pairplot
 temp_df = df[df['class'] != 'QSO']
 temp_df = temp_df.drop('redshift', axis=1)
 sns.pairplot(temp_df, hue='class')
